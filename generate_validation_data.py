@@ -1,7 +1,7 @@
 import pandas as pd
 import random
 
-def generate_validation_data(n):
+def generate_data(n):
     df = pd.DataFrame()
     for _ in range(n):
         data = {
@@ -14,11 +14,12 @@ def generate_validation_data(n):
         df = df.append(data, ignore_index=True)
     return df
 
-print("Let's generate some data!")
-n = int(input("How much data do you want? (must enter an integer)"))
-df = generate_validation_data(n)
-columns = df.columns.tolist()
-columns = [elem for elem in columns if "Unnamed" not in elem]
-df = df[columns]
-df.to_csv("validation_data.csv", index=False)
+def main():
+    print("Let's generate some validation data!")
+    n = int(input("How much data do you want? (must enter an integer)"))
+    df = generate_data(n)
+    columns = df.columns.tolist()
+    columns = [elem for elem in columns if "Unnamed" not in elem]
+    df = df[columns]
+    df.to_csv("validation_data.csv", index=False)
 
