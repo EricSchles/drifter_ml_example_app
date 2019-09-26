@@ -13,7 +13,7 @@ reg_tests = RegressionTests(
 )
 
 def test_difference():
-    assert reg_tests.regression_testing(200, 200)
+    assert reg_tests.mse_upper_boundary(200)
 
 
     
