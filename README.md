@@ -10,6 +10,7 @@ Steps for recreating the application:
 You can run the steps with:
 
 ```
+python -m pip install -r requirements.txt
 chmod +x run_steps.sh
 ./run_steps.sh
 ```
